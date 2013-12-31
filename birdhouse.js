@@ -32,12 +32,21 @@ function birdhouse() {
     if (answer == 1) {
       //CREATE TWEET
       input.question("Tweet:  ", function(answer) {
-        T.post('statuses/update', { status: answer }, function(err, reply) {
-          console.log("");
-          console.log("Tweet successfully posted!")
-          console.log("");
+        if (answer.length <= 140)
+        {
+          T.post('statuses/update', { status: answer }, function(err, reply) {
+            console.log("");
+            console.log("Tweet successfully posted!")
+            console.log("");
+            birdhouse();
+          })
+        }
+        else
+        {
+          console.log("Your tweet was too long.");
           birdhouse();
-        })})
+        }
+      })
     }
     else if (answer == 2) {
       //REALTIME KEYWORD FILTER
