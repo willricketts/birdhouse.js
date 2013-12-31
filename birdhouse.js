@@ -15,9 +15,16 @@ var input = readline.createInterface({
 });
 
 function birdhouse() {
+  console.log("");
+  console.log("birdhouse.js - Will Ricketts 2013");
+  console.log("Web: http://willricketts.com");
+  console.log("Twitter: @willricketts");
+  console.log("Send me some Dogecoin! -- D78V7nRX32mb7F4o5QvCAyfX3iaSAyPP1h");
+  console.log("");
   console.log("1: Create Tweet");
-  console.log("2: Realtime Keyword Filter")
-  console.log("3: Hashtag Scraper")
+  console.log("2: Realtime Keyword Filter");
+  console.log("3: Hashtag Scraper");
+  console.log("");
   input.question("Select a module: ", function(answer) {
 
     var module = answer;
