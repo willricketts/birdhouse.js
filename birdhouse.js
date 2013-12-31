@@ -24,6 +24,7 @@ function birdhouse() {
   console.log("1: Create Tweet");
   console.log("2: Realtime Keyword Filter");
   console.log("3: Hashtag Scraper");
+  console.log("4: Mention Listener");
   console.log("");
   input.question("Select a module: ", function(answer) {
 
@@ -79,6 +80,17 @@ function birdhouse() {
           console.log("User:  " + "@" + tweet.user.screen_name);
           console.log("Tweet:  " + tweet.text);
         })
+      })
+    }
+    else if (answer == 4)
+    {
+      //MENTION LISTENER
+      var stream = T.stream('user');
+      stream.on('tweet', function (tweet){
+        if (tweet.in_reply_to_screen_name == '')
+        {
+          console.log('Mention:  ' + tweet.text);
+        }
       })
     }
     else
